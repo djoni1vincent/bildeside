@@ -1,0 +1,44 @@
+:root {
+  --bg: #f8fafc;
+  --text: #0f172a;
+  --brand: #2563eb;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header, footer {
+  text-align: center;
+  padding: 1rem;
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+footer {
+  border-top: 1px solid #e2e8f0;
+  margin-top: 2rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 1rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
