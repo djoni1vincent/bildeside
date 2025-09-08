@@ -46,6 +46,7 @@ footer {
   border-radius: 12px;
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
+  height: 12rem;
 }
 
 .gallery img:hover {
