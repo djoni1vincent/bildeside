@@ -1,36 +1,24 @@
-
 document.addEventListener("DOMContentLoaded", () => {
-  const images = document.querySelectorAll(".gallery img");
+const images = document.querySelectorAll(".gallery img")
 
-  const popup = document.createElement("div");
-  popup.id = "popup";
-  popup.style.display = "none";
-  popup.style.position = "fixed";
-  popup.style.top = "0";
-  popup.style.left = "0";
-  popup.style.width = "100%";
-  popup.style.height = "100%";
-  popup.style.backgroundColor = "rgba(0,0,0,0.8)";
-  popup.style.alignItems = "center";
-  popup.style.justifyContent = "center";
-  popup.style.zIndex = "1000";
+const popup = document.createElement("div");
+popup.id = "popup";
 
-  const popupImg = document.createElement("img");
-  popupImg.style.maxWidth = "80%";
-  popupImg.style.maxHeight = "80%";
-  popup.appendChild(popupImg);
+const popupImg = document.createElement("img");
+popup.appendChild(popupImg)
 
-  popup.addEventListener("click", () => {
-    popup.style.display = "none";
+document.body.appendChild(popup);
+
+
+images.forEach(img => {
+  img.addEventListener("click", () => {
+    popupImg.src = img.src;
+    popup.classList.add("show");
   });
 
-  document.body.appendChild(popup);
-
-  // При клике на картинку
-  images.forEach(img => {
-    img.addEventListener("click", () => {
-      popupImg.src = img.src;
-      popup.style.display = "flex";
-    });
-  });
+popup.addEventListener("click", () => {
+  popup.classList.remove("show");
 });
+
+});
+})
